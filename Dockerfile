@@ -26,7 +26,8 @@ ENV ROBOT_THREADS 1
 ENV ROBOT_UID 1000
 ENV ROBOT_GID 1000
 
-# Dependency versions
+# Dependencies versions
+ENV FIREFOX_VERSION 78.0
 ENV GECKO_DRIVER_VERSION 0.29.0
 
 # Prepare binaries to be executed
@@ -77,8 +78,12 @@ RUN dnf install --nodocs -y \
     xlrd\
     suds-py3\
     requests==2.25.1 \
+# Install Firefox browser
+  && wget -O- "https://ftp.mozilla.org/pub/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/en-US/firefox-${FIREFOX_VERSION}.tar.bz2" | tar -jx -C /usr/local/ \
+  && echo "exclude=firefox" >> /etc/dnf/dnf.conf \
+  && ln -s /usr/local/firefox/firefox /usr/bin/firefox \
 # Install Gecko driver
-  && wget -q "https://npm.taobao.org/mirrors/geckodriver/v$GECKO_DRIVER_VERSION/geckodriver-v$GECKO_DRIVER_VERSION-linux64.tar.gz" \
+  && wget -q "https://npm.taobao.org/mirrors/geckodriver/v${GECKO_DRIVER_VERSION}/geckodriver-v${GECKO_DRIVER_VERSION}-linux64.tar.gz" \
   && tar xzf geckodriver-v$GECKO_DRIVER_VERSION-linux64.tar.gz \
   && mkdir -p /opt/robotframework/drivers/ \
   && mv geckodriver /opt/robotframework/drivers/geckodriver \
