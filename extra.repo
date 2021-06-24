@@ -18,17 +18,3 @@ baseurl=http://mirror.centos.org/centos-8/8/BaseOS/x86_64/os/
 gpgcheck=1
 enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
-
-[powertools]
-name=CentOS Stream $releasever - PowerTools
-baseurl=http://mirror.centos.org/centos-8/8/PowerTools/x86_64/os/
-gpgcheck=1
-enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
-
-[packages]
-name=CentOS Stream $releasever - Packages
-baseurl=http://mirror.centos.org/centos-8/8/Packages/x86_64/os/
-gpgcheck=1
-enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
