@@ -16,5 +16,8 @@ From project folder:
 
 ### Release Notes
 - 1.0
-  - RPM from mixed CentOS/Fedora repositories
+  - RPMs from mixed CentOS/Fedora repositories
+  - Gecko Driver and Firefox downloaded with wget
+- Latest
+  - RPMs from Fedora repositories
   - Gecko Driver and Firefox downloaded with wget

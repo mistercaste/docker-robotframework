@@ -37,7 +37,6 @@ COPY bin/run-tests-in-virtual-screen.sh ${ROBOT_BIN_DIR}/
 
 # Setup for DNF install of Google Chrome
 COPY extra.repo /etc/yum.repos.d/google-chrome.repo
-COPY rpm-gpg/RPM-GPG-KEY-centosofficial /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 COPY rpm-gpg/RPM-GPG-KEY-EPEL-8 /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8
 
 ################################## Root Section ##################################
