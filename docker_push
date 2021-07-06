@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+if [ "$TRAVIS_TAG" != "" ]
+then 
+    docker tag docker-robotframework:ci mistercaste/docker-robotframework:"$TRAVIS_TAG"
+    docker push mistercaste/docker-robotframework:"$TRAVIS_TAG"
+fi
+    docker tag docker-robotframework:ci mistercaste/docker-robotframework:latest
+    docker tag mistercaste/docker-robotframework:latest mistercaste/docker-robotframework:"$TRAVIS_JOB_ID"
+    docker push mistercaste/docker-robotframework:latest 
+    docker push mistercaste/docker-robotframework:"$TRAVIS_JOB_ID"
