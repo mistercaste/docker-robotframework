@@ -8,11 +8,11 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8
 [fedora-31-everything]
 name=fedora-31-everything
 baseurl=https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/31/Everything/x86_64/os/
-enabled=0
+enabled=1
 gpgcheck=0
 
 [fedora-32-everything]
 name=fedora-32-everything
 baseurl=https://dl.fedoraproject.org/pub/fedora/linux/updates/32/Everything/x86_64/
-enabled=0
+enabled=1
 gpgcheck=0
