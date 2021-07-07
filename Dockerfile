@@ -36,7 +36,7 @@ COPY bin/chromium-browser.sh ${ROBOT_BIN_DIR}/chromium-browser
 COPY bin/run-tests-in-virtual-screen.sh ${ROBOT_BIN_DIR}/
 
 # Setup for DNF install of Google Chrome
-COPY extra.repo /etc/yum.repos.d/google-chrome.repo
+COPY extra.repo /etc/yum.repos.d/extra.repo
 COPY rpm-gpg/RPM-GPG-KEY-EPEL-8 /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8
 
 ################################## Root Section ##################################
