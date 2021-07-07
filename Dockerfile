@@ -45,12 +45,6 @@ USER root
 
 # Install system dependencies
 RUN dnf install --nodocs -y \
-  gcc \
-  libffi-devel \
-  make \
-  openssl-devel \
-  which \
-  wget \
   chromium \
   chromedriver \
   xorg-x11-server-Xvfb \
