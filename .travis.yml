@@ -12,8 +12,8 @@ script:
   - docker build -t docker-robotframework:ci .
 
 after_success:
-  - docker run --rm -v $(pwd)/test:/opt/robotframework/tests:Z -e BROWSER=firefox docker-robotframework
-  - docker run --rm -v $(pwd)/test:/opt/robotframework/tests:Z -e BROWSER=chrome docker-robotframework
+  - docker run --rm -v $(pwd)/test:/opt/robotframework/tests:Z -e BROWSER=firefox docker-robotframework:ci
+  - docker run --rm -v $(pwd)/test:/opt/robotframework/tests:Z -e BROWSER=chrome docker-robotframework:ci
 
 deploy:
   skip_cleanup: true
