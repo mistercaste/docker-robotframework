@@ -45,10 +45,6 @@ USER root
 
 # Install system dependencies
 RUN dnf install --nodocs -y \
-  mesa-dri-drivers \
-  libexif \
-  libcanberra-gtk2 \
-  libcanberra \
   chromium \
   chromedriver \
   xorg-x11-server-Xvfb \
