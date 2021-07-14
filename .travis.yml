@@ -10,8 +10,6 @@ script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin registry.redhat.io
   - docker build -t docker-robotframework:ci .
-
-after_success:
   - docker run --rm -v $(pwd)/test:/opt/robotframework/tests:Z -e BROWSER=firefox docker-robotframework:ci
   - docker run --rm -v $(pwd)/test:/opt/robotframework/tests:Z -e BROWSER=chrome docker-robotframework:ci
 
